@@ -1,8 +1,8 @@
 {
     const tasks = [
         {
-            content: "Zrobić moduł 6 kursu",
-            done: false,
+            content: "Zrobić szósty moduł kursu",
+            done: true,
         },
         {
             content: "Zrobić obiad",
@@ -18,7 +18,7 @@
     }
 
     const removeTask = (taskIndex) => {
-        tasks.slice(taskIndex, 1);
+        tasks.splice(taskIndex, 1);
         render();
     }
 
@@ -52,8 +52,8 @@
         for (const task of tasks) {
             htmlString += `
             <li class="taskList--li">
-            <button class="taskList--toggle js-toggleButton">Done?</button>
-            <span class="taskList--text" ${task.done ? "style=\"text-decoration: line-through\"" : ""}>${task.content}</span>
+            <button class="taskList--toggle js-toggleButton"><img src="img/check.png" alt="check" class="${task.done ? "taskList--img" : "taskList--imgDone"}"></button>
+            <span class="taskList--text ${task.done ? " taskList--textDone" : ""}">${task.content}</span>
             <button class="taskList--remove js-removeButton">Delete</button>
             
             </li>
@@ -67,6 +67,11 @@
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+
+        const focusOnInput = document.querySelector(".js-button").addEventListener("click", () => {
+            document.querySelector(".js-newTask").focus();
+        })
+        focusOnInput();
 
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
 
