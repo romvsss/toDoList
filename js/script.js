@@ -68,10 +68,9 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const focusOnInput = document.querySelector(".js-button").addEventListener("click", () => {
+        document.querySelector(".js-button").addEventListener("click", () => {
             document.querySelector(".js-newTask").focus();
         })
-        focusOnInput();
 
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
 
