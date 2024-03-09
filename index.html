@@ -23,7 +23,7 @@
     </header>
     <main class="main">
         <div class="newTask">
-            <h2 class="newTask--header">Add new task!</h2>
+            <h2 class="newTask--headerText">Add new task!</h2>
             <hr class="hr">
             <form class="newTask--form js-form">
                 <input class="newTask--input js-newTask" placeholder="Add some tasks!">
@@ -31,7 +31,10 @@
             </form>
         </div>
         <div class="taskList">
-            <h2 class="newTask--header">Tasks List</h2>
+            <div class="taskList__header">
+            <h2 class="newTask--headerText">Tasks List</h2>
+            <div class="taskList__buttons js-buttons"></div>
+            </div>
             <hr class="hr">
             <ul class="taskList--ul js-tasks"></ul>
         </div>

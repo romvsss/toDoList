@@ -8,7 +8,7 @@
     background-color: #fff;
 }
 
-.newTask--header {
+.newTask--headerText {
     padding: 20px;
     margin: 0;
     text-indent: 30px;
@@ -61,6 +61,19 @@
     background-color: #fff;
     border-radius: 20px;
     margin-top: 30px;
+}
+
+.taskList__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskList__buttons {
+    flex-basis: 60%;
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+    margin: 20px;
 }
 
 .taskList--ul {
