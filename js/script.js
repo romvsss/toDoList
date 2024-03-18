@@ -98,7 +98,7 @@
             <button class="taskList--remove js-removeButton">✖</button>
             
             </li>
-            <hr class="hr">
+            <hr class="hr ${hideDoneTasks && tasks.every(({ done }) => done) ? "hr--disabled" : ""}">
         `;
         }
 
