@@ -12,7 +12,12 @@ html {
     font-family: 'Lato', sans-serif;
     background-color: #ccc;
 }
-.hr{
+
+.hr {
     max-width: 90%;
-    margin:0 auto;
+    margin: 0 auto;
+}
+
+.hr--disabled {
+    display: none;
 }
