@@ -130,6 +130,7 @@
             return;
         }
         addNewTask(newTaskContent);
+        document.querySelector(".js-newTask").value = "";
     };
 
     const init = () => {
