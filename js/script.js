@@ -90,7 +90,7 @@
 
         for (const task of tasks) {
             htmlStringText += `
-            <li class="taskList--li">
+            <li class="taskList--li${task.done && hideDoneTasks ? " taskList--hiddenItems" : ""}">
             <button class="taskList--toggle js-toggleButton">
             ${task.done ? "✔" : ""}
             </button>
@@ -110,8 +110,8 @@
 
         if (tasks.length)
             htmlStringButtons += `
-            <button class="hideAllDoneButton js-hideAllDoneTasks">Ukryj wszystkie ukończone zadania</button>
-            <button class="markAllButton js-markAllTasks">Zaznacz wszystkie zadania jako ukończone</button>
+            <button class="hideAllDoneButton js-hideAllDoneTasks">${hideDoneTasks ? "Pokaż" : "Ukryj"} wszystkie ukończone zadania</button>
+            <button class="markAllButton js-markAllTasks" ${tasks.every(({ done }) => done) ? "disabled" : ""}>Zaznacz wszystkie zadania jako ukończone</button>
             `
 
         document.querySelector(".js-buttons").innerHTML = htmlStringButtons;
@@ -122,7 +122,7 @@
 
         document.querySelector(".js-button").addEventListener("click", () => {
             document.querySelector(".js-newTask").focus();
-        })
+        });
 
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
 
