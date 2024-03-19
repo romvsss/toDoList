@@ -10,14 +10,6 @@ html {
 
 .body {
     font-family: 'Lato', sans-serif;
-    background-color: #ccc;
-}
-
-.hr {
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-.hr--disabled {
-    display: none;
+    background-color: #dddddd;
+    font-weight: 900;
 }
