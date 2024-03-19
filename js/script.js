@@ -91,14 +91,14 @@
         for (const task of tasks) {
             htmlStringText += `
             <li class="taskList--li${task.done && hideDoneTasks ? " taskList--hiddenItems" : ""}">
-            <button class="taskList--toggle js-toggleButton">
-            ${task.done ? "✔" : ""}
-            </button>
-            <span class="taskList--text ${task.done ? " taskList--textDone" : ""}">${task.content}</span>
-            <button class="taskList--remove js-removeButton">✖</button>
-            
+                <button class="taskList--toggle js-toggleButton">
+                    ${task.done ? "✔" : ""}
+                </button>
+                <span class="taskList--text ${task.done ? " taskList--textDone" : ""}">${task.content}</span>
+                <button class="taskList--remove js-removeButton">
+                    🗑️
+                </button>
             </li>
-            <hr class="hr ${hideDoneTasks && tasks.every(({ done }) => done) ? "hr--disabled" : ""}">
         `;
         }
 
@@ -110,8 +110,12 @@
 
         if (tasks.length)
             htmlStringButtons += `
-            <button class="hideAllDoneButton js-hideAllDoneTasks">${hideDoneTasks ? "Pokaż" : "Ukryj"} wszystkie ukończone zadania</button>
-            <button class="markAllButton js-markAllTasks" ${tasks.every(({ done }) => done) ? "disabled" : ""}>Zaznacz wszystkie zadania jako ukończone</button>
+            <button class="markAllButton js-markAllTasks" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
+                Ukończ wszystkie
+            </button>
+            <button class="hideAllDoneButton js-hideAllDoneTasks">
+                ${hideDoneTasks ? "Pokaż" : "Ukryj"} wszystkie
+            </button>
             `
 
         document.querySelector(".js-buttons").innerHTML = htmlStringButtons;
